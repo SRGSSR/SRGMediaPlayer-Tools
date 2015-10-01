@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      
+/* -------------------- *\
+    #TEAM SCREEN
+\* -------------------- */
+.team__member {
+    margin: 0 auto 40px;
+    text-align: center;
+}
+.team-member__avatar {
+    max-width: 10%;
+    margin: 0 auto 0px 55px;
+    /* border: 10px solid rgba(255, 255, 255, 0.1); */
+    border-radius: 50%;
+}
+.team-member__name {
+    color: #4dbce9;
+}      
+
+h4 {
+    font-size: small;
+    min-height: 50px;
+}
+.twitter_handle {
+    font-size: small;
+}
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# SRGMediaPlayer 
+an easy-to-use, modularized, open-source, bi-platform Media Player.
+
+
+<br/>
+
+__Presenters :__ Sébastien Chauvin, Cédric Foellmi
+
+<br/>
+
+__SRGMediaPlayer Team:__ 
+
+
+<div class="container">
+<div class="row">
+
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/deblazz.jpg" width=60 alt="...">
+<h4 class="team-member__name">Axel Deblasi</h4><p class="twitter_handle">@deblazz</p>
+</div>
+    
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/0xced-dark.jpg" width=60 alt="...">
+<h4 class="team-member__name">Cédric Lüthi</h4><p class="twitter_handle">@0xced</p>
+</div>
+
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/nicolapietri.png" width=60 alt="...">
+<h4 class="team-member__name">Nicolas Pietri</h4><p class="twitter_handle">@Pi3tPiet</p>
+</div>
+
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/sebchauvin.jpeg" width=60 alt="...">
+<h4 class="team-member__name">Sébastien Chauvin</h4><p class="twitter_handle"></p>
+</div>
+
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/defagos.png" width=60 alt="...">
+<h4 class="team-member__name">Samuel Defago</h4><p class="twitter_handle">@defagos</p>
+</div>
+
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/..." width=60 alt="...">
+<h4 class="team-member__name">Frédéric Humbert-Droz</h4><p class="twitter_handle">@fredhdroz</p>
+</div>
+
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/pyby85.jpeg" width=60 alt="...">
+<h4 class="team-member__name">Pierre-Yves Bertholon</h4><p class="twitter_handle">@pyby85</p>
+</div>
+
+<div class="team_member col-md-1">    
+<img class="img-circle" src="EBU_DevCon_2015_Images/onekiloparsec.png" width=60 alt="...">
+<h4 class="team-member__name">Cédric Foellmi</h4><p class="twitter_handle">@onekiloparsec</p>
+</div>
+
+
+</div>
+</div>
+
+---
+
+# Agenda
+
+1. Why another media player?
+2. The SRG Media Player architecture
+3. Showcase and Demos
+4. Hands-on labs
+
+---
+
+# Why another media player?
+
+1. Modularity
+2. Need to share work and benefits between teams
+3. Adaptability and flexibility
+
+iOS specifically (context etc?)
+
+Search for "media player ios" on GitHub leads to 36 results
+<img src="EBU_DevCon_2015_Images/github_media_player_ios.png" width=300 alt="...">
+
+Android specifically (context etc?)
+
+---
+
+# The SRG Media Player architecture
+
+1. Core. Has the unique role of media playback.
+2. Data provider: protocol for obtaining the media URL (local or remote), identified by a unique string identifier.
+3. Overlays: controls, branding elements and even other players (see demo)
+4. Features: Segmented media, audio background modes, video timeshift, inline player, statistics / analytics.
+
+
+---
+
+# Showcase and Demos
+
+1. SRGMediaPlayer comes with its demo project. Here is a demo of the demo...
+2. Multi-Live players on RTSsport, and Play Apps (SRF, RTS, RSI, RTR, SWI), as well as RTSkids for Android.
+
+---
+
+# Questions?
+
+
+---
+
+# Hands-on lab
+
+Repo:
+
+[http://github.com/SRGSSR](http://github.com/SRGSSR)
+
+
+
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
+
