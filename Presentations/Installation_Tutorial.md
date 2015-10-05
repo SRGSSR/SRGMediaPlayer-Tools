@@ -47,5 +47,23 @@ dependencies {
 # iOS
 
 ## Requirements
+- Xcode 6.4
+- CocoaPods 0.38.2
 
 ## Repositories
+
+`https://github.com/SRGSSR/SRGMediaPlayer-iOS`
+
+## Setup
+
+- Create a new Xcode project
+- In the project root directory, add a `Podfile` with the following contents:
+
+```
+platform :ios, '8.0'
+
+inhibit_all_warnings!
+
+pod 'SRGMediaPlayer', '1.2.1'
+```
+- Run the `pod install` command from this directory
