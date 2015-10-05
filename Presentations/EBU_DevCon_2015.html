@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>SRGMediaPlayer Library</title>
     <meta charset="utf-8">
     
 <!-- Latest compiled and minified CSS -->
@@ -136,17 +136,47 @@ iOS specifically (context etc?)
 Search for "media player ios" on GitHub leads to 36 results
 <img src="EBU_DevCon_2015_Images/github_media_player_ios.png" width=300 alt="...">
 
-Android specifically (context etc?)
+---
+
+# Why another Android media player?
+
+- Easily encapsulate and change underlying media player:
+- Share more than a media player
+
+---
+
+# Choice of underlying media player
+
+We tried multiple media playing solutions:
+- Native player _no HLS, super slow audio buffering_
+- ExoPlayer (Google / YouTube) _a bit complex, HLS not fully supported_
+- Akamai SDK _commercial, no documentation, slow seek_
+
+---
+
+# Share more than a basic player
+
+We wanted to share more between projects
+- Statistics
+- Player controls
+- Meta data loading, storage and display
+- Segment load and display
+- Background play with notifications
+- Chromecast / Airplay
+
+And we did not want a monolithic Activity doing all the above
+(in Play the VideoPlayerActivity is 500 lines long)
 
 ---
 
 # The SRG Media Player architecture
 
 1. Core. Has the unique role of media playback.
-2. Data provider: protocol for obtaining the media URL (local or remote), identified by a unique string identifier.
+2. Data provider: protocol for obtaining the media URL (local or remote),
+identified by a unique string identifier.
 3. Overlays: controls, branding elements and even other players (see demo)
-4. Features: Segmented media, audio background modes, video timeshift, inline player, statistics / analytics.
-
+4. Features: Segmented media, audio background modes, video timeshift,
+inline player, statistics / analytics.
 
 ---
 
@@ -168,9 +198,20 @@ Repo:
 
 [http://github.com/SRGSSR](http://github.com/SRGSSR)
 
+---
 
+# Suggested goal
 
-
+- Create an empty app
+- Add the player component
+- Write a custom data provider (static URL)
+- Screen with just a Play button
+- _we are already playing a media_
+- Add a player window
+- _we can see the video_
+- Add a playlist interface to the data provider
+- Add a custom overlay to enable next / previous in the playlist
+- _we can navigate in the media playlist_
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
@@ -180,4 +221,3 @@ Repo:
     </script>
   </body>
 </html>
-
