@@ -3,10 +3,10 @@
   <head>
     <title>SRGMediaPlayer Library</title>
     <meta charset="utf-8">
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
+
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
@@ -18,7 +18,7 @@
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-      
+
       .team__member {
           margin: 0 auto 40px;
           text-align: center;
@@ -31,8 +31,8 @@
       }
       .team-member__name {
           color: #4dbce9;
-      }      
-      
+      }
+
       h4 {
           font-size: small;
           min-height: 50px;
@@ -41,14 +41,14 @@
           font-size: small;
       }
     </style>
-    
+
   </head>
   <body>
     <textarea id="source">
 
 class: center, middle
 
-# SRGMediaPlayer 
+# SRGMediaPlayer
 an easy-to-use, modularized, open-source, bi-platform Media Player.
 [github.com/SRGSSR](http://github.com/SRGSSR)
 
@@ -59,48 +59,48 @@ __Presenters :__ Sébastien Chauvin, Cédric Foellmi
 
 <br/>
 
-__SRGMediaPlayer Team:__ 
+__SRGMediaPlayer Team:__
 
 
 <div class="container">
 <div class="row">
 
-<div class="team_member col-md-1">    
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/deblazz.jpg" width=60 alt="...">
 <h4 class="team-member__name">Axel Deblasi</h4><p class="twitter_handle">@deblazz</p>
 </div>
-    
-<div class="team_member col-md-1">    
+
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/0xced-dark.jpg" width=60 alt="...">
 <h4 class="team-member__name">Cédric Lüthi</h4><p class="twitter_handle">@0xced</p>
 </div>
 
-<div class="team_member col-md-1">    
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/nicolapietri.png" width=60 alt="...">
 <h4 class="team-member__name">Nicolas Pietri</h4><p class="twitter_handle">@Pi3tPiet</p>
 </div>
 
-<div class="team_member col-md-1">    
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/sebchauvin.jpeg" width=60 alt="...">
 <h4 class="team-member__name">Sébastien Chauvin</h4><p class="twitter_handle"></p>
 </div>
 
-<div class="team_member col-md-1">    
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/defagos.png" width=60 alt="...">
 <h4 class="team-member__name">Samuel Defago</h4><p class="twitter_handle">@defagos</p>
 </div>
 
-<div class="team_member col-md-1">    
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/..." width=60 alt="...">
 <h4 class="team-member__name">Frédéric Humbert-Droz</h4><p class="twitter_handle">@fredhdroz</p>
 </div>
 
-<div class="team_member col-md-1">    
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/pyby85.jpeg" width=60 alt="...">
 <h4 class="team-member__name">Pierre-Yves Bertholon</h4><p class="twitter_handle">@pyby85</p>
 </div>
 
-<div class="team_member col-md-1">    
+<div class="team_member col-md-1">
 <img class="img-circle" src="EBU_DevCon_2015_Images/onekiloparsec.png" width=60 alt="...">
 <h4 class="team-member__name">Cédric Foellmi</h4><p class="twitter_handle">@onekiloparsec</p>
 </div>
@@ -132,16 +132,25 @@ __SRGMediaPlayer Team:__
 # Why another _Android_ media player? <img src="EBU_DevCon_2015_Images/icon-android.png" width=50 alt="...">
 
 - Easily encapsulate and change underlying media player
-- Share more than a media player
+- Share more than a media player between projects
 
 ---
 
 # Choice of underlying media player <img src="EBU_DevCon_2015_Images/icon-android.png" width=50 alt="...">
 
 We tried multiple media playing solutions:
-- Native player _no HLS, super slow audio buffering_
+- Native player _slow HLS, super slow audio buffering_
 - ExoPlayer (Google / YouTube) _a bit complex, HLS not fully supported_
 - Akamai SDK _commercial, no documentation, slow seek_
+
+---
+
+# Choice of underlying media player <img src="EBU_DevCon_2015_Images/icon-android.png" width=50 alt="...">
+
+We tried multiple media playing solutions:
+- ~~Native player _slow HLS, super slow audio buffering_~~
+- ExoPlayer (Google / YouTube) _a bit complex, HLS not fully supported_
+- ~~Akamai SDK _commercial, no documentation, slow seek_~~
 
 ---
 
@@ -150,21 +159,6 @@ We tried multiple media playing solutions:
 - Stability enhancements for Samsung devices and our HLS streams
 _(pull request pending)_
 - HLS DVR _(in progress)_
-
----
-
-# Share more than a basic player <img src="EBU_DevCon_2015_Images/icon-android.png" width=50 alt="...">
-
-We wanted to share more between projects
-- Statistics
-- Player controls
-- Meta data loading, storage and display
-- Segment load and display
-- Background play with notifications
-- Chromecast / Airplay
-
-And we did not want a monolithic Activity doing all the above
-(in Play the VideoPlayerActivity is 500 lines long)
 
 ---
 
@@ -193,6 +187,23 @@ But few repos contain true players, and even fewer are easily customisable...
 * __SRGMediaPlayer__<font color='green'>: High-level, fully customisable, and (hopefully) fairly easy-to-use (We'll see at the Hands-on lab!)</font>
 * __AVPlayer__: Full control on (almost) everything, but low-level and lot of work to achieve a complete experience
 
+---
+
+# Share more than a basic player
+
+We wanted to share more between projects
+- Statistics
+- Player controls
+- Meta data loading, storage and display
+- Segment load and display
+- Background play with notifications
+- Chromecast / Airplay
+
+--
+
+... And we did not want a monolithic Activity doing all the above
+(in Play the VideoPlayerActivity is 500 lines long)
+
 
 
 ---
@@ -212,11 +223,59 @@ The SRGMediaPlayer comes with its demo project.
 
 ---
 
+# Data Source <img src="EBU_DevCon_2015_Images/icon-apple.png" width=60 alt="...">
+
+```objective-c
+@protocol RTSMediaPlayerControllerDataSource <NSObject>
+
+-(void)mediaPlayerController:(RTSMediaPlayerController *)mediaPlayerController
+     contentURLForIdentifier:(NSString *)identifier
+           completionHandler:(void (^)(NSURL *contentURL, NSError *error))
+                             completionHandler;
+
+@end
+```
+
+--
+
+```objective-c
+@protocol RTSMediaSegmentsDataSource <NSObject>
+-(void)segmentsController:(RTSMediaSegmentsController *)controller
+    segmentsForIdentifier:(NSString *)identifier
+    withCompletionHandler:(RTSMediaSegmentsCompletionHandler)completionHandler ;
+@end
+```
+
+---
+# Data provider <img src="EBU_DevCon_2015_Images/icon-android.png" width=50 alt="...">
+
+```java
+
+public interface SRGMediaPlayerDataProvider {
+	int TYPE_AUDIO = 1;
+	int TYPE_VIDEO = 2;
+
+	Uri getUri(String mediaIdentifier) throws SRGMediaPlayerException;
+
+	int getMediaType(String mediaIdentifier) throws SRGMediaPlayerException;
+}
+```
+
+--
+
+```java
+public interface SegmentDataProvider {
+    List<Segment> getSegments(String mediaIdentifier);
+}
+```
+
+
+---
 # Showcase and Demos
 
 Currently, the SRGMediaPlayer is used in:
 1. RTSsport,
-2. Play Apps (SRF, RTS, RSI, RTR, SWI), 
+2. Play Apps (SRF, RTS, RSI, RTR, SWI),
 3. RTSkids for Android.
 
 <img src="EBU_DevCon_2015_Images/srgmediaplayer_ios_1.png" width=250 alt="...">
@@ -241,6 +300,10 @@ Currently, the SRGMediaPlayer is used in:
 Repo:
 
 [http://github.com/SRGSSR](http://github.com/SRGSSR)
+
+This presentation and tutorial links:
+
+[https://github.com/SRGSSR/SRGMediaPlayer-Tools/tree/master/Presentations]
 
 # Suggested goal
 
