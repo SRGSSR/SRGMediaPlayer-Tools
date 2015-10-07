@@ -105,7 +105,6 @@ __SRGMediaPlayer Team:__
 <h4 class="team-member__name">Cédric Foellmi</h4><p class="twitter_handle">@onekiloparsec</p>
 </div>
 
-
 </div>
 </div>
 
@@ -173,7 +172,7 @@ But few repos contain true players, and even fewer are easily customisable...
 
 ---
 
-# The _iOS_ media players landscape (simplified)? <img src="EBU_DevCon_2015_Images/icon-apple.png" width=60 alt="...">
+# The _iOS_ players landscape (simplified) <img src="EBU_DevCon_2015_Images/icon-apple.png" width=60 alt="...">
 
 * __MPMoviePlayerController__: Really easy to use but quite hard to customize.
 *  <font color='#BBBBBB'>Hey, your guess...</font>
@@ -205,15 +204,30 @@ We wanted to share more between projects
 (in Play the VideoPlayerActivity is 500 lines long)
 
 
+---
+
+# SRGMediaPlayer is the result of a long process
+
+1. It all started in (national project) Play Apps (in 5 langages)
+2. in order to increase quality, we decided to extract the media player as library.
+3. The mobile team beside found it nice!
+
+--
+
+4. So we all decided to throw it away entirely... 
+
+--
+
+5. ...and start over together.
+
 
 ---
 
 # The SRG Media Player architecture
 
-1. __Core__ Has the unique role of media playback.
-2. __Data provider__ protocol for obtaining the media URL (local or remote),
-identified by a unique string identifier.
-3. __Overlays__ controls, branding elements and even other players (see demo)
+1. __Core__: has the unique role of media playback.
+2. __Data provider__: protocol for obtaining the media URL (local or remote), identified by a unique string identifier.
+3. __Overlays__: playback controls, branding elements and even other players (see demo)
 
 <br/>
 __Features__: Segmented media, audio background modes, video timeshift,
@@ -227,12 +241,9 @@ The SRGMediaPlayer comes with its demo project.
 
 ```objective-c
 @protocol RTSMediaPlayerControllerDataSource <NSObject>
-
 -(void)mediaPlayerController:(RTSMediaPlayerController *)mediaPlayerController
      contentURLForIdentifier:(NSString *)identifier
-           completionHandler:(void (^)(NSURL *contentURL, NSError *error))
-                             completionHandler;
-
+           completionHandler:(void (^)(NSURL *contentURL, NSError *error))hr;
 @end
 ```
 
@@ -242,7 +253,7 @@ The SRGMediaPlayer comes with its demo project.
 @protocol RTSMediaSegmentsDataSource <NSObject>
 -(void)segmentsController:(RTSMediaSegmentsController *)controller
     segmentsForIdentifier:(NSString *)identifier
-    withCompletionHandler:(RTSMediaSegmentsCompletionHandler)completionHandler ;
+    withCompletionHandler:(RTSMediaSegmentsCompletionHandler)hr;
 @end
 ```
 
@@ -303,7 +314,7 @@ Repo:
 
 This presentation and tutorial links:
 
-[https://github.com/SRGSSR/SRGMediaPlayer-Tools/tree/master/Presentations]
+[https://github.com/SRGSSR/SRGMediaPlayer-Tools](https://github.com/SRGSSR/SRGMediaPlayer-Tools)
 
 # Suggested goal
 
